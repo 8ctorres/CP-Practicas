@@ -47,9 +47,9 @@ get_aux(Predicate, Storage) ->
         [] ->
             {error, no_product};
         [H|T] ->
-            case H of
-                Predicate -> {ok, H};
-                _ ->
+            case Predicate(H) of
+                true -> {ok, H};
+                false ->
                     get_aux(Predicate, T)
             end
     end.
