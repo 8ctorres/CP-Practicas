@@ -48,7 +48,7 @@ void enter_bridge(int dir){
     lock(bridge);
   }
   cars[dir]++;
-  unlock(cars[dir]);
+  unlock(m_cars[dir]);
 }
 
 void exit_bridge(int dir){
